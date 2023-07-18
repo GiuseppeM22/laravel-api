@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PortfolioController extends Controller
 {
     public function index(){
-        $portfolio = Portfolio::all();
+        $portfolio = Portfolio::paginate(3);
         $response = [
             "success" => true,
             "results" => $portfolio
